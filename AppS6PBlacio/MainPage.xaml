@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppS6PBlacio.MainPage"
+             NavigationPage.HasNavigationBar="false">
+
+    <StackLayout>
+        <Label Text="Consumir web service" FontSize="Title" HorizontalTextAlignment="Center"/>
+        <Label x:Name="texto" Text=""/>       
+
+        <ListView x:Name="MyListView" ItemSelected="MyListView_ItemSelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout>
+                            <Label x:Name="lblnombre" Text="{Binding nombre}"/>
+                            <Label x:Name="lblapellido" Text="{Binding apellido}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Ingresar" x:Name="btnPost" Clicked="btnPost_Clicked"/>
+        <Button Text="Actualizar" x:Name="btnPut" Clicked="btnPut_Clicked"/>
+        <Button Text="Eliminar" x:Name="btnDelete" Clicked="btnDelete_Clicked"/>
+    </StackLayout>
+
+</ContentPage>
